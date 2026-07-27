@@ -1,0 +1,103 @@
+.timeline {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+/* Línea vertical de la timeline */
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--grad-1), var(--grad-2), var(--grad-3));
+  opacity: 0.5;
+}
+
+.timeline__item {
+  position: relative;
+  padding-bottom: 1.5rem;
+}
+
+.timeline__dot {
+  position: absolute;
+  left: -1.5rem;
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent-gradient);
+  box-shadow: 0 0 0 4px rgba(168, 85, 247, 0.18);
+  transform: translateX(-1px);
+}
+
+.timeline__card {
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius);
+  padding: 1.8rem;
+}
+
+.timeline__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.4rem 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.timeline__role {
+  font-size: 1.25rem;
+}
+
+.timeline__at { color: var(--text-dim); }
+
+.timeline__period {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.timeline__points {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-bottom: 1.4rem;
+}
+
+.timeline__points li {
+  position: relative;
+  padding-left: 1.4rem;
+  color: var(--text-dim);
+  font-size: 0.96rem;
+}
+
+.timeline__points li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: var(--grad-1);
+  font-weight: 700;
+}
+
+.timeline__stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.timeline__stack span {
+  font-size: 0.78rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.22);
+  color: #bfe9ff;
+}
+
+@media (max-width: 560px) {
+  .timeline__card { padding: 1.3rem; }
+}

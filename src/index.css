@@ -1,0 +1,115 @@
+:root {
+  --bg: #0d0b1f;
+  --bg-soft: #15122e;
+  --surface: rgba(255, 255, 255, 0.04);
+  --surface-border: rgba(255, 255, 255, 0.09);
+  --text: #f3f0ff;
+  --text-dim: #a49fc4;
+  --grad-1: #ff5f9e;
+  --grad-2: #a855f7;
+  --grad-3: #38bdf8;
+  --grad-4: #fbbf24;
+  --accent-gradient: linear-gradient(120deg, #ff5f9e, #a855f7 45%, #38bdf8);
+  --radius: 20px;
+  --max-w: 1120px;
+  --font-display: "Sora", system-ui, sans-serif;
+  --font-body: "Space Grotesk", system-ui, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Fondo con blobs de color */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(45rem 45rem at 80% -10%, rgba(168, 85, 247, 0.28), transparent 60%),
+    radial-gradient(40rem 40rem at 0% 20%, rgba(255, 95, 158, 0.22), transparent 55%),
+    radial-gradient(35rem 35rem at 60% 100%, rgba(56, 189, 248, 0.2), transparent 55%);
+  pointer-events: none;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+a { color: inherit; text-decoration: none; }
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+}
+
+section {
+  padding: 6.5rem 1.5rem;
+  scroll-margin-top: 72px; /* evita que la navbar fija tape el título al navegar */
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+.gradient-text {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--grad-1);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  color: var(--text-dim);
+  max-width: 46ch;
+  margin-bottom: 3rem;
+}
+
+/* Elementos que aparecen con scroll: ocultos hasta que anime.js los revela */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; }
+  html { scroll-behavior: auto; }
+}
