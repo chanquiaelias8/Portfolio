@@ -4,6 +4,9 @@ import "./Hero.css";
 
 const ROLES = ["Java 17", "Spring Boot", "React.js", "Vue.js", "PostgreSQL"];
 
+// BASE_URL vale "/" en local y "/Portfolio/" en producción (GitHub Pages).
+const CV_URL = `${import.meta.env.BASE_URL}cv/Elias_Chanquia_CV.pdf`;
+
 export default function Hero() {
   const root = useRef(null);
   const started = useRef(false);
@@ -86,6 +89,7 @@ export default function Hero() {
 
         <div className="hero__actions">
           <a href="#proyectos" className="btn btn--primary">Ver proyectos</a>
+          <a href={CV_URL} download className="btn btn--ghost">Descargar CV ↓</a>
           <a href="#contacto" className="btn btn--ghost">Contactarme</a>
         </div>
 
