@@ -22,6 +22,15 @@
   margin: 0 auto 1.5rem;
 }
 
+/* El título se anima letra a letra (inline-block + transform). Como eso rompe
+   el background-clip:text del contenedor, cada letra lleva su propio gradiente. */
+.hero__title .char {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 /* Elementos del hero: arrancan invisibles y anime.js los revela.
    Evita el parpadeo inicial antes de que corra la animación. */
 .hero__title .char,

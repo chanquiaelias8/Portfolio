@@ -75,9 +75,7 @@ export default function Hero() {
       <div className="container hero__inner">
         <span className="hero__eyebrow eyebrow">Full Stack Developer · Mar del Plata, AR</span>
 
-        <h1 className="hero__title">
-          <span className="gradient-text">{chars}</span>
-        </h1>
+        <h1 className="hero__title">{chars}</h1>
 
         <p className="hero__desc">
           Hola, soy <strong>Elias Chanquía</strong>. Desarrollador Full Stack con 2 años de
