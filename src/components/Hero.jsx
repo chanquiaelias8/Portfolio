@@ -80,7 +80,7 @@ export default function Hero() {
         <p className="hero__desc">
           Hola, soy <strong>Elias Chanquía</strong>. Desarrollador Full Stack con más de 10
           años programando y 2 de experiencia profesional, construyendo aplicaciones web con
-          <strong> Java / Spring Boot</strong> en el backend y <strong>React / Vue.js</strong>
+          <strong> Java / Spring Boot</strong> en el backend y <strong>React / Vue.js </strong>
           en el frontend, dentro de equipos ágiles.
         </p>
 
