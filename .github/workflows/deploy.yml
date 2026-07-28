@@ -36,6 +36,9 @@ jobs:
 
       - name: Compilar el sitio
         run: npm run build
+        env:
+          # El valor se define en Settings → Secrets and variables → Actions
+          VITE_FORMSPREE_ID: ${{ secrets.VITE_FORMSPREE_ID }}
 
       - name: Configurar Pages
         uses: actions/configure-pages@v5

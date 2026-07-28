@@ -81,10 +81,17 @@
 
 .contact__form .btn { margin-top: 0.3rem; text-align: center; }
 
-.contact__success {
-  color: #7ee787;
+.contact__feedback {
   font-weight: 500;
   font-size: 0.95rem;
+}
+
+.contact__feedback--ok { color: #7ee787; }
+.contact__feedback--error { color: #ff8080; }
+
+.contact__form .btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 @media (max-width: 820px) {
