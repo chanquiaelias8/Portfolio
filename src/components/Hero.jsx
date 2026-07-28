@@ -73,14 +73,15 @@ export default function Hero() {
       </div>
 
       <div className="container hero__inner">
-        <span className="hero__eyebrow eyebrow">Full Stack Developer · Mar del Plata, AR</span>
+        <span className="hero__eyebrow eyebrow">Full Stack Developer · Buenos Aires, AR</span>
 
         <h1 className="hero__title">{chars}</h1>
 
         <p className="hero__desc">
-          Hola, soy <strong>Elias Chanquía</strong>. Desarrollador Full Stack con 2 años de
-          experiencia construyendo aplicaciones web con <strong>Java / Spring Boot</strong> en
-          el backend y <strong>React / Vue.js</strong> en el frontend, dentro de equipos ágiles.
+          Hola, soy <strong>Elias Chanquía</strong>. Desarrollador Full Stack con más de 10
+          años programando y 2 de experiencia profesional, construyendo aplicaciones web con
+          <strong> Java / Spring Boot</strong> en el backend y <strong>React / Vue.js</strong>
+          en el frontend, dentro de equipos ágiles.
         </p>
 
         <div className="hero__actions">

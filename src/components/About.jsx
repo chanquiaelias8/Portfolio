@@ -2,8 +2,8 @@ import { useReveal } from "../hooks/useReveal";
 import "./About.css";
 
 const STATS = [
-  { value: "2+", label: "Años de experiencia" },
-  { value: "4-5", label: "Historias por sprint" },
+  { value: "+10", label: "Años programando" },
+  { value: "2", label: "Años profesionales" },
   { value: "15+", label: "Endpoints protegidos" },
 ];
 
@@ -19,10 +19,12 @@ export default function About() {
             Un poco sobre <span className="gradient-text">quién soy</span>
           </h2>
           <p className="reveal">
-            Soy desarrollador Full Stack radicado en Mar del Plata, Argentina. Trabajo tanto
-            en backend como en frontend: desarrollo features end-to-end con <strong>Java 17 /
-            Spring Boot</strong> y <strong>Vue.js</strong>, escribo pruebas con JUnit y Mockito,
-            y optimizo el acceso a datos en MySQL y PostgreSQL.
+            Soy desarrollador Full Stack radicado en Buenos Aires, Argentina. Programo desde
+            2016 (más de 10 años entre la práctica y el aprendizaje) y cuento con 2 años de
+            experiencia profesional en el área. Trabajo tanto en backend como en frontend:
+            desarrollo features end-to-end con <strong>Java 17 / Spring Boot</strong> y
+            <strong> React / Vue.js</strong>, escribo pruebas con JUnit y Mockito, y optimizo el
+            acceso a datos en MySQL y PostgreSQL.
           </p>
           <p className="reveal">
             Me adapto rápido, valoro el trabajo en equipo y aplico buenas prácticas: code
@@ -47,7 +49,7 @@ export default function About() {
             <span>&nbsp;&nbsp;rol: <i>"Full Stack Developer"</i>,</span>
             <span>&nbsp;&nbsp;backend: [<i>"Java"</i>, <i>"Spring Boot"</i>],</span>
             <span>&nbsp;&nbsp;frontend: [<i>"React"</i>, <i>"Vue.js"</i>],</span>
-            <span>&nbsp;&nbsp;ubicacion: <i>"Mar del Plata, AR"</i>,</span>
+            <span>&nbsp;&nbsp;ubicacion: <i>"Buenos Aires, AR"</i>,</span>
             <span>&nbsp;&nbsp;disponible: <b>true</b>,</span>
             <span>{"}"};</span>
           </div>

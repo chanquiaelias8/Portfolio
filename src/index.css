@@ -102,11 +102,13 @@ section {
   margin-bottom: 3rem;
 }
 
-/* Elementos que aparecen con scroll: ocultos hasta que anime.js los revela */
+/* Elementos que aparecen con scroll: ocultos hasta que anime.js los revela.
+   Nota: NO usar will-change permanente aquí — promueve el elemento a una capa
+   compositada y hace que el texto con background-clip:text (gradiente) se vuelva
+   invisible en Chromium. */
 .reveal {
   opacity: 0;
   transform: translateY(28px);
-  will-change: transform, opacity;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -22,12 +22,20 @@ export function useReveal({ selector = ".reveal", y = 28, delay = 90 } = {}) {
       (entries, obs) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
-          animate(entry.target.querySelectorAll(selector), {
+          const els = entry.target.querySelectorAll(selector);
+          animate(els, {
             opacity: [0, 1],
             translateY: [y, 0],
             duration: 750,
             delay: stagger(delay),
             ease: "out(3)",
+            onComplete: () => {
+              // Quita el transform residual (translateY(0px)) para no dejar el
+              // elemento en una capa compositada que rompa el texto con gradiente.
+              els.forEach((el) => {
+                el.style.transform = "none";
+              });
+            },
           });
           obs.unobserve(entry.target);
         });
