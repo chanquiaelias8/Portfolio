@@ -81,6 +81,16 @@
 
 .contact__form .btn { margin-top: 0.3rem; text-align: center; }
 
+/* Honeypot: fuera de la vista y del foco, pero presente en el DOM para los bots */
+.contact__honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
 .contact__feedback {
   font-weight: 500;
   font-size: 0.95rem;

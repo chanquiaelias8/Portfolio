@@ -86,6 +86,19 @@ export default function Contact() {
         </div>
 
         <form className="contact__form reveal" onSubmit={handleSubmit}>
+          {/* Honeypot anti-spam: invisible para humanos; si un bot lo completa,
+              Formspree descarta el envío automáticamente. */}
+          <input
+            type="text"
+            name="_gotcha"
+            className="contact__honeypot"
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+          />
+          {/* Asunto personalizado del email que te llega */}
+          <input type="hidden" name="_subject" value="📩 Nuevo mensaje desde tu portfolio" />
+
           <div className="field">
             <label htmlFor="name">Nombre</label>
             <input id="name" name="name" type="text" required placeholder="Tu nombre" />
