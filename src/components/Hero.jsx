@@ -6,8 +6,15 @@ const ROLES = ["Java 17", "Spring Boot", "React.js", "Vue.js", "PostgreSQL"];
 
 export default function Hero() {
   const root = useRef(null);
+  const started = useRef(false);
 
   useEffect(() => {
+    // Guard: en React StrictMode el efecto se ejecuta dos veces (montar →
+    // limpiar → montar). Sin esto, dos animaciones sobre las mismas letras
+    // entran en conflicto y quedan mal (aparecen y se desvanecen).
+    if (started.current) return;
+    started.current = true;
+
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduce) return;
 
@@ -39,7 +46,7 @@ export default function Hero() {
       );
 
     // Formas flotantes en bucle infinito
-    const shapes = animate(".hero__shape", {
+    animate(".hero__shape", {
       translateY: [0, -22],
       duration: 3200,
       delay: stagger(400),
@@ -47,13 +54,6 @@ export default function Hero() {
       loop: true,
       alternate: true,
     });
-
-    // cancel() retira las animaciones del motor sin dejarlas "congeladas"
-    // reafirmando opacity:0 (lo que ocurría con pause() en StrictMode).
-    return () => {
-      tl.cancel?.();
-      shapes.cancel?.();
-    };
   }, []);
 
   // Divide el título en caracteres para animarlos individualmente
